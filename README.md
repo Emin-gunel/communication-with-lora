@@ -11,7 +11,6 @@ Raspberry Pi Pico 2 W ve Ai-Thinker RA-01 (SX1278) kullanılarak, BME280 sensör
 - [Donanım](#donanım)  
 - [Yazılım Mimarisi](#yazılım-mimarisi)  
 - [Haberleşme Parametreleri](#haberleşme-parametreleri)  
-- [Bağlantı (kısa)](#bağlantı-kısa)  
 - [Çalıştırma / Seri Monitör](#çalıştırma--seri-monitör)  
 - [Testler](#testler)  
 - [Katkıda Bulunma](#katkıda-bulunma)  
@@ -26,22 +25,21 @@ Bu proje iki Pico tabanlı node (verici ve alıcı) arasında LoRa P2P haberleş
 - Basit P2P LoRa iletişimi (verici ↔ alıcı)  
 - BME280 ile sıcaklık, nem ve basınç okuma  
 - Taşınabilir C++ tabanlı uygulama (Pico SDK ile C/C++)  
-- Dengeli, gereksiz ayrıntıya girmeyen kullanım/kurulum yönergeleri
 
 ## Donanım
 - Raspberry Pi Pico 2 W (her iki node için)  
 - BME280 sensörü (I2C) — verici tarafta  
 - AI Thinker RA-01 (SX1278) LoRa modülü — her node için ayrı modül  
 - Anten (uygun 433 MHz anten)  
-- Güç kaynağı (USB güç veya batarya)
+- Güç kaynağı (USB güç)
 
 ## Yazılım Mimarisi
 - Sensör okuma (BME280, I2C)  
-- Veri paketleme (koşullu, küçük paket yapısı)  
+- Veri paketleme 
 - LoRa gönderim (SX1278 üzerinden SPI)  
 - RX tarafında alma ve seri terminale yazma
 
-C++ standardı: C++17 (proje C++ ile yazılmıştır; Pico SDK ile uyumlu şekilde C/C++ karışımı olabilir).
+C++ standardı: C++17 (proje C++ ile yazılmıştır).
 
 ## Haberleşme Parametreleri
 - Frekans: 433 MHz  
@@ -50,13 +48,7 @@ C++ standardı: C++17 (proje C++ ile yazılmıştır; Pico SDK ile uyumlu şekil
 - Coding Rate: 4/5  
 - TX Gücü: 17 dBm
 
-Bu parametreler LoRa link'i ve menzili doğrudan etkiler — gerekirse ayarlanabilir.
-
-## Bağlantı (kısa)
-- BME280: I2C (SDA, SCL) — verici Pico'ya bağlanır. VCC=3.3V, GND ortak.  
-- RA-01 (SX1278): SPI (MOSI, MISO, SCK) + CS + DIOx + RESET (modül pinlerini proje dokümanınıza göre eşleyin). VCC=3.3V.  
-- Anten takılı ve uygun şekilde topraklanmış olmalı.  
-Not: Tam pin eşlemeleri proje kodundaki pin tanımlarına göre yapılmalıdır; burada genel yönlendirme verilmektedir.
+Bu parametreler LoRa link'i ve menzili doğrudan etkiler.
 
 ## Çalıştırma / Seri Monitör
 - Seri hız: 115200 baud (varsayılan; proje içinde değiştirilebilir).  
@@ -72,7 +64,7 @@ Alıcı: gelen paketları çözümler ve terminale yazdırır.
 
 ## Testler
 - Projede otomatik test altyapısı yoksa, ilk testler manuel olacaktır: verici ve alıcıyı aynı ortamda çalıştırıp, sensör okuma ve paket alımını doğrulayın.  
-- İyi bir sonraki adım: basit bir loopback testleri ve menzil testleri yapmaktır (farklı mesafeler/engeller altında paket kaybını kontrol edin).
+- Bir sonraki adım: basit bir loopback testi ve menzil testi yapılmakta (farklı mesafeler/engeller altında paket kaybını kontrol edin).
 
 ## Katkıda Bulunma
 1. Fork → branch oluştur (ör. feature/iyileme-adi)  
