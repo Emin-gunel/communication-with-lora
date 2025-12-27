@@ -53,10 +53,7 @@ Bu parametreler LoRa link'i ve menzili doğrudan etkiler — gerekirse ayarlanab
 ## Çalıştırma / Seri Monitör
 - Seri hız: 115200 baud (varsayılan; proje içinde değiştirilebilir).  
 - Terminal ile izleme örneği:
-<<<<<<< HEAD
-=======
 
->>>>>>> 4f22e4256bd06d0e295d9b2b188c2b892b706853
 ```bash
 # Linux / macOS
 picocom /dev/ttyUSB0 -b 115200
@@ -78,8 +75,4 @@ Alıcı: gelen paketları çözümler ve terminale yazdırır.
 ## İletişim
 - Sahip / Repo: https://github.com/Emin-gunel (güncellemek isterseniz gerçek repo linkinizi ekleyin)
 
-<<<<<<< HEAD
----
-=======
----
->>>>>>> 4f22e4256bd06d0e295d9b2b188c2b892b706853
+
