@@ -10,11 +10,7 @@ Raspberry Pi Pico 2 W ve Ai-Thinker RA-01 (SX1278) kullanılarak, BME280 sensör
 - [Özellikler](#özellikler)  
 - [Donanım](#donanım)  
 - [Yazılım Mimarisi](#yazılım-mimarisi)  
-- [Haberleşme Parametreleri](#haberleşme-parametreleri)  
-<<<<<<< HEAD
-=======
-- [Bağlantı (kısa)](#bağlantı-kısa)  
->>>>>>> 94f1d73c7630afed4bf45d0b6cdc6d043b32b2c7
+- [Haberleşme Parametreleri](#haberleşme-parametreleri)   
 - [Çalıştırma / Seri Monitör](#çalıştırma--seri-monitör)  
 - [Testler](#testler)  
 - [Katkıda Bulunma](#katkıda-bulunma)  
@@ -28,29 +24,14 @@ Bu proje iki Pico tabanlı node (verici ve alıcı) arasında LoRa P2P haberleş
 ## Özellikler
 - Basit P2P LoRa iletişimi (verici ↔ alıcı)  
 - BME280 ile sıcaklık, nem ve basınç okuma  
-- Taşınabilir C++ tabanlı uygulama (Pico SDK ile C/C++)  
-<<<<<<< HEAD
-=======
-- Dengeli, gereksiz ayrıntıya girmeyen kullanım/kurulum yönergeleri
->>>>>>> 94f1d73c7630afed4bf45d0b6cdc6d043b32b2c7
-
+- Taşınabilir C++ tabanlı uygulama (Pico SDK ile C/C++)
+  
 ## Donanım
 - Raspberry Pi Pico 2 W (her iki node için)  
 - BME280 sensörü (I2C) — verici tarafta  
 - AI Thinker RA-01 (SX1278) LoRa modülü — her node için ayrı modül  
 - Anten (uygun 433 MHz anten)  
-<<<<<<< HEAD
 - Güç kaynağı (USB güç)
-
-## Yazılım Mimarisi
-- Sensör okuma (BME280, I2C)  
-- Veri paketleme 
-- LoRa gönderim (SX1278 üzerinden SPI)  
-- RX tarafında alma ve seri terminale yazma
-
-C++ standardı: C++17 (proje C++ ile yazılmıştır).
-=======
-- Güç kaynağı (USB güç veya batarya)
 
 ## Yazılım Mimarisi
 - Sensör okuma (BME280, I2C)  
@@ -58,8 +39,7 @@ C++ standardı: C++17 (proje C++ ile yazılmıştır).
 - LoRa gönderim (SX1278 üzerinden SPI)  
 - RX tarafında alma ve seri terminale yazma
 
-C++ standardı: C++17 (proje C++ ile yazılmıştır; Pico SDK ile uyumlu şekilde C/C++ karışımı olabilir).
->>>>>>> 94f1d73c7630afed4bf45d0b6cdc6d043b32b2c7
+C++ standardı: C++17 (proje C++ ile yazılmıştır).
 
 ## Haberleşme Parametreleri
 - Frekans: 433 MHz  
@@ -68,25 +48,12 @@ C++ standardı: C++17 (proje C++ ile yazılmıştır; Pico SDK ile uyumlu şekil
 - Coding Rate: 4/5  
 - TX Gücü: 17 dBm
 
-<<<<<<< HEAD
-Bu parametreler LoRa link'i ve menzili doğrudan etkiler.
-=======
 Bu parametreler LoRa link'i ve menzili doğrudan etkiler — gerekirse ayarlanabilir.
-
-## Bağlantı (kısa)
-- BME280: I2C (SDA, SCL) — verici Pico'ya bağlanır. VCC=3.3V, GND ortak.  
-- RA-01 (SX1278): SPI (MOSI, MISO, SCK) + CS + DIOx + RESET (modül pinlerini proje dokümanınıza göre eşleyin). VCC=3.3V.  
-- Anten takılı ve uygun şekilde topraklanmış olmalı.  
-Not: Tam pin eşlemeleri proje kodundaki pin tanımlarına göre yapılmalıdır; burada genel yönlendirme verilmektedir.
->>>>>>> 94f1d73c7630afed4bf45d0b6cdc6d043b32b2c7
 
 ## Çalıştırma / Seri Monitör
 - Seri hız: 115200 baud (varsayılan; proje içinde değiştirilebilir).  
 - Terminal ile izleme örneği:
-<<<<<<< HEAD
-=======
 
->>>>>>> 94f1d73c7630afed4bf45d0b6cdc6d043b32b2c7
 ```bash
 # Linux / macOS
 picocom /dev/ttyUSB0 -b 115200
@@ -98,11 +65,7 @@ Alıcı: gelen paketları çözümler ve terminale yazdırır.
 
 ## Testler
 - Projede otomatik test altyapısı yoksa, ilk testler manuel olacaktır: verici ve alıcıyı aynı ortamda çalıştırıp, sensör okuma ve paket alımını doğrulayın.  
-<<<<<<< HEAD
-- Bir sonraki adım: basit bir loopback testi ve menzil testi yapılmakta (farklı mesafeler/engeller altında paket kaybını kontrol edin).
-=======
-- İyi bir sonraki adım: basit bir loopback testleri ve menzil testleri yapmaktır (farklı mesafeler/engeller altında paket kaybını kontrol edin).
->>>>>>> 94f1d73c7630afed4bf45d0b6cdc6d043b32b2c7
+- Bir sonraki adım: basit bir loopback testi ve menzil testi yapmaktır (farklı mesafeler/engeller altında paket kaybını kontrol edin).
 
 ## Katkıda Bulunma
 1. Fork → branch oluştur (ör. feature/iyileme-adi)  
@@ -111,8 +74,5 @@ Alıcı: gelen paketları çözümler ve terminale yazdırır.
 
 ## İletişim
 - Sahip / Repo: https://github.com/Emin-gunel (güncellemek isterseniz gerçek repo linkinizi ekleyin)
-<<<<<<< HEAD
 
 ---
-=======
->>>>>>> 94f1d73c7630afed4bf45d0b6cdc6d043b32b2c7
